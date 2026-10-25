@@ -1,31 +1,34 @@
 
-const passwordInput = document.getElementById("password");
+const password = document.getElementById("password");
 const togglePassword = document.getElementById("togglePassword");
 const loginForm = document.getElementById("loginForm");
 const message = document.getElementById("message");
 
-// Show or hide the password
 togglePassword.addEventListener("click", function () {
-  const passwordIsHidden = passwordInput.type === "password";
+  const isHidden = password.type === "password";
 
-  passwordInput.type = passwordIsHidden ? "text" : "password";
-  togglePassword.textContent = passwordIsHidden ? "Hide" : "Show";
+  password.type = isHidden ? "text" : "password";
+  togglePassword.textContent = isHidden ? "Hide" : "Show";
+
+  togglePassword.setAttribute(
+    "aria-label",
+    isHidden ? "Hide password" : "Show password"
+  );
+
+  togglePassword.setAttribute("aria-pressed", String(isHidden));
 });
 
-// Demonstration only: this does not authenticate a user.
 loginForm.addEventListener("submit", function (event) {
   event.preventDefault();
 
-  message.style.color = "#244f40";
-  message.textContent =
-    "Login form validated! Connect a backend to sign in securely.";
-});
+  message.textContent = "";
 
-// Forgot password placeholder
-document.getElementById("forgotLink").addEventListener("click", function (event) {
-  event.preventDefault();
+  if (!loginForm.checkValidity()) {
+    loginForm.reportValidity();
+    return;
+  }
 
-  message.style.color = "#244f40";
-  message.textContent =
-    "Password reset will be available after backend setup.";
+  message.textContent = "Opening Student Dashboard...";
+
+  window.location.href = "student-dashboard.html";
 });
