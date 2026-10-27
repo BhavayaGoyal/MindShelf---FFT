@@ -6,7 +6,7 @@ const cors = require("cors");
 const helmet = require("helmet");
 const rateLimit = require("express-rate-limit");
 
-const { connectDB } = require("./database/db");
+const { connectDB } = require("./db");
 const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 
 const app = express();
