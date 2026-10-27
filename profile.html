@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Profile | MindShelf</title>
+  <link rel="stylesheet" href="profile.css">
+  <link rel="stylesheet" href="footer.css">
+</head>
+<body>
+
+<div class="app">
+
+  <aside class="sidebar">
+    <a href="student-dashboard.html" class="brand">
+      <span class="brand-icon">M</span>
+      <span>MindShelf.<small>YOUR KNOWLEDGE SPACE</small></span>
+    </a>
+
+    <p class="side-label">WORKSPACE</p>
+
+    <nav>
+      <a href="student-dashboard.html">▦ Dashboard</a>
+      <a href="my-notes.html">▤ My Notes</a>
+      <a href="my-collections.html">▣ My Collections</a>
+      <a href="shared-resources.html">▧ Resource Library</a>
+      <a href="favorites.html">☆ Favorites</a>
+      <a href="shared-knowledge.html">♧ Shared Knowledge</a>
+      <a href="submissions.html">☷ Submissions</a>
+      <a href="notifications.html">♢ Notifications</a>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <div class="mini-card">
+        <strong>Your knowledge matters.</strong>
+        <p>Keep learning. Keep collecting ideas.</p>
+      </div>
+
+      <a href="profile.html" class="student active">◉ My Profile</a>
+    </div>
+  </aside>
+
+  <main class="main">
+
+    <header class="topbar">
+      <a href="student-dashboard.html" class="back">← Dashboard</a>
+      <a href="notifications.html" class="notification" aria-label="Notifications">♢</a>
+    </header>
+
+    <section class="content">
+
+      <div class="heading">
+        <p class="eyebrow">ACCOUNT</p>
+        <h1>My Profile</h1>
+        <p class="subtitle">Manage your personal and academic information.</p>
+      </div>
+
+      <section class="profile-card">
+
+        <div class="profile-banner"></div>
+
+        <div class="profile-main">
+          <div class="avatar" id="profileAvatar">S</div>
+
+          <div class="profile-heading">
+            <h2 id="displayName">Student Name</h2>
+            <p id="displayEmail">student@college.edu</p>
+            <span class="account-badge">Student Account</span>
+          </div>
+
+          <button class="edit-button" id="editButton">✎ Edit Profile</button>
+        </div>
+
+        <div class="profile-info">
+
+          <div class="section-title">
+            <h3>Personal Information</h3>
+          </div>
+
+          <div class="info-grid">
+            <div class="info-item">
+              <span>Full Name</span>
+              <strong id="infoName">Student Name</strong>
+            </div>
+
+            <div class="info-item">
+              <span>Email Address</span>
+              <strong id="infoEmail">student@college.edu</strong>
+            </div>
+
+            <div class="info-item">
+              <span>Phone Number</span>
+              <strong id="infoPhone">Not added</strong>
+            </div>
+
+            <div class="info-item">
+              <span>About Me</span>
+              <strong id="infoAbout">Tell us about yourself.</strong>
+            </div>
+          </div>
+
+          <div class="section-title academic-title">
+            <h3>Academic Information</h3>
+          </div>
+
+          <div class="info-grid">
+            <div class="info-item">
+              <span>Course</span>
+              <strong id="infoCourse">MCA</strong>
+            </div>
+
+            <div class="info-item">
+              <span>Institution</span>
+              <strong id="infoInstitution">Add your institution</strong>
+            </div>
+
+            <div class="info-item">
+              <span>Semester</span>
+              <strong id="infoSemester">Not added</strong>
+            </div>
+
+            <div class="info-item">
+              <span>Interests</span>
+              <strong id="infoInterests">Not added</strong>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="settings-card">
+        <h3>Account Settings</h3>
+
+        <a href="account-settings.html" class="setting-row">
+          <div>
+            <strong>Account Preferences</strong>
+            <p>Manage your account settings.</p>
+          </div>
+          <span>›</span>
+        </a>
+
+        <a href="notifications.html" class="setting-row">
+          <div>
+            <strong>Notifications</strong>
+            <p>View your recent updates.</p>
+          </div>
+          <span>›</span>
+        </a>
+
+        <a href="help.html" class="setting-row">
+          <div>
+            <strong>Help & Support</strong>
+            <p>Get assistance with MindShelf.</p>
+          </div>
+          <span>›</span>
+        </a>
+      </section>
+
+      <footer>
+        <span>© 2026 MindShelf</span>
+        <span>Learn · Share · Grow</span>
+      </footer>
+
+    </section>
+  </main>
+</div>
+
+<div class="modal" id="editModal" hidden>
+  <div class="modal-box">
+    <div class="modal-heading">
+      <div>
+        <h2>Edit Profile</h2>
+        <p>Update your profile information.</p>
+      </div>
+      <button type="button" id="closeModal" class="close-button">×</button>
+    </div>
+
+    <form id="profileForm">
+
+      <label for="name">Full Name</label>
+      <input type="text" id="name" required maxlength="80">
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" required maxlength="120">
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" maxlength="20">
+
+      <label for="about">About Me</label>
+      <textarea id="about" rows="3" maxlength="300"></textarea>
+
+      <label for="course">Course</label>
+      <input type="text" id="course" maxlength="80">
+
+      <label for="institution">Institution</label>
+      <input type="text" id="institution" maxlength="120">
+
+      <label for="semester">Semester</label>
+      <input type="text" id="semester" maxlength="30">
+
+      <label for="interests">Interests</label>
+      <input type="text" id="interests" maxlength="200"
+        placeholder="e.g. AI, Data Science, Design">
+
+      <div class="form-actions">
+        <button type="button" id="cancelButton" class="cancel-button">
+          Cancel
+        </button>
+        <button type="submit" class="save-button">
+          Save Changes
+        </button>
+      </div>
+
+      <p id="formMessage" role="status"></p>
+    </form>
+  </div>
+</div>
+<div id="footer"></div>
+
+<script src="profile.js"></script>
+<script src="footer.js"></script>
+</body>
+</html>

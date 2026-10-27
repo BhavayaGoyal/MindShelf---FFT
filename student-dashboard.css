@@ -1313,3 +1313,22 @@ input:focus-visible {
     right: 0;
   }
 }
+.notification-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.notification-dot {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  width: 8px;
+  height: 8px;
+  background-color: #c65d4b;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+}

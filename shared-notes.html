@@ -1,0 +1,224 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shared Notes | MindShelf</title>
+  <link rel="stylesheet" href="shared-notes.css">
+  <link rel="stylesheet" href="footer.css">
+
+</head>
+<body>
+
+<div class="app">
+
+  <aside class="sidebar">
+    <a href="student-dashboard.html" class="brand">
+      <span class="brand-icon">M</span>
+      <span>MindShelf.<small>YOUR KNOWLEDGE SPACE</small></span>
+    </a>
+
+    <p class="side-label">WORKSPACE</p>
+
+    <nav>
+      <a href="student-dashboard.html">▦ Dashboard</a>
+      <a href="my-notes.html">▤ My Notes</a>
+      <a href="my-collections.html">▣ My Collections</a>
+      <a href="shared-resources.html">▧ Resource Library</a>
+      <a href="favorites.html">☆ Favorites</a>
+      <a href="shared-notes.html" class="active">▤ Shared Notes</a>
+      <a href="shared-knowledge.html">♧ Shared Knowledge</a>
+      <a href="submissions.html">☷ Submissions</a>
+      <a href="notifications.html">♢ Notifications</a>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <div class="mini-card">
+        <span>✦</span>
+        <strong>Knowledge grows when shared.</strong>
+        <p>Discover ideas. Inspire others.</p>
+      </div>
+      <a href="profile.html" class="student">◉ My Profile</a>
+    </div>
+  </aside>
+
+  <main class="main">
+
+    <header class="topbar">
+      <div>
+        <span class="top-label">COMMUNITY /</span>
+        <span class="top-current">Shared Notes</span>
+      </div>
+
+      <div class="top-actions">
+        <a href="notifications.html" class="notification"
+           aria-label="Notifications">♢</a>
+        <a href="profile.html" class="avatar">B</a>
+      </div>
+    </header>
+
+    <section class="content">
+
+      <div class="welcome">
+        <div>
+          <p class="eyebrow">THE STUDENT KNOWLEDGE HUB</p>
+          <h1>Ideas worth <em>sharing.</em></h1>
+          <p class="welcome-text">
+            Explore notes created by students like you.
+            Learn something new, one page at a time.
+          </p>
+        </div>
+        <div class="welcome-art">
+          <span class="art-star">✳</span>
+          <div class="paper paper-back"></div>
+          <div class="paper paper-front">
+            <span>✎</span>
+            <div></div><div></div><div></div>
+            <small>YOUR NEXT IDEA</small>
+          </div>
+        </div>
+      </div>
+
+      <section class="featured">
+        <div class="featured-text">
+          <span class="featured-label">✦ EDITOR'S PICK</span>
+          <p class="featured-category">DATA SCIENCE · STUDY GUIDE</p>
+          <h2>Machine Learning<br>Made Simple</h2>
+          <p>
+            A student-friendly guide to algorithms,
+            model training and evaluation.
+          </p>
+          <div class="featured-bottom">
+            <span>By Ananya Sharma</span>
+            <button id="featuredPreview" class="featured-button">
+              Explore Notes ↗
+            </button>
+          </div>
+        </div>
+
+        <div class="featured-visual">
+          <div class="visual-circle"></div>
+          <div class="visual-note">
+            <span>ML / 101</span>
+            <h3>Learn.<br>Train.<br>Predict.</h3>
+            <div class="visual-line"></div>
+            <small>THE BASICS, SIMPLIFIED</small>
+          </div>
+          <span class="visual-star">✳</span>
+        </div>
+      </section>
+
+      <section class="discovery">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">DISCOVER</p>
+            <h2>Find your next <em>aha!</em></h2>
+          </div>
+          <span class="note-count" id="noteCount">0 notes</span>
+        </div>
+
+        <div class="search-bar">
+          <span class="search-icon">⌕</span>
+          <input type="search" id="searchInput"
+            placeholder="Search notes, subjects or creators..."
+            aria-label="Search shared notes">
+          <button id="clearSearch" class="clear-search"
+            aria-label="Clear search" hidden>×</button>
+        </div>
+
+        <div class="filters">
+          <div class="filter-group">
+            <button class="filter-btn active" data-subject="All">All Notes</button>
+            <button class="filter-btn" data-subject="Data Science">Data Science</button>
+            <button class="filter-btn" data-subject="Mathematics">Mathematics</button>
+            <button class="filter-btn" data-subject="Programming">Programming</button>
+            <button class="filter-btn" data-subject="UI/UX">UI/UX</button>
+          </div>
+
+          <div class="sort-box">
+            <label for="sortNotes">Sort:</label>
+            <select id="sortNotes">
+              <option value="latest">Latest</option>
+              <option value="popular">Most liked</option>
+              <option value="az">A–Z</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="extra-filters">
+          <label for="difficulty">Difficulty</label>
+          <select id="difficulty">
+            <option value="All">All levels</option>
+            <option value="Beginner">Beginner</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
+          </select>
+
+          <span class="filter-hint">Made for curious minds ✦</span>
+        </div>
+
+        <div class="notes-grid" id="notesGrid"></div>
+
+        <div class="empty-state" id="emptyState" hidden>
+          <span>⌕</span>
+          <h3>No notes found</h3>
+          <p>Try another keyword or change your filters.</p>
+          <button id="resetFilters">Reset filters</button>
+        </div>
+
+      </section>
+
+      <section class="trending">
+        <div>
+          <p class="eyebrow">STUDENT FAVORITES</p>
+          <h2>Little notes. <em>Big ideas.</em></h2>
+        </div>
+        <p>
+          Find inspiration, collect useful study material,
+          and make learning a shared experience.
+        </p>
+      </section>
+
+      <footer>
+        <span>© 2026 MindShelf</span>
+        <span>Learn · Share · Grow</span>
+      </footer>
+
+    </section>
+  </main>
+</div>
+
+<div class="modal" id="previewModal" hidden>
+  <div class="modal-overlay" data-close="true"></div>
+
+  <div class="modal-box" role="dialog"
+       aria-modal="true" aria-labelledby="modalTitle">
+
+    <button class="modal-close" id="closeModal"
+      aria-label="Close preview">×</button>
+
+    <p class="eyebrow" id="modalCategory">SHARED NOTE</p>
+    <h2 id="modalTitle">Note title</h2>
+
+    <div class="modal-meta" id="modalMeta"></div>
+
+    <div class="preview-content" id="modalContent"></div>
+
+    <div class="modal-actions">
+      <button id="modalLike" class="modal-secondary">♡ Like</button>
+      <button id="modalBookmark" class="modal-secondary">☆ Save</button>
+      <button id="modalShare" class="modal-primary">↗ Share</button>
+    </div>
+
+    <p class="modal-message" id="modalMessage" role="status"></p>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div id="footer"></div>
+
+<script src="shared-notes.js"></script>
+<script src="footer.js"></script>
+</body>
+</html>

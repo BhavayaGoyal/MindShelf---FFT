@@ -1,0 +1,441 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher Dashboard | MindShelf</title>
+  <link rel="stylesheet" href="teacher-dashboard.css">
+  <link rel="stylesheet" href="footer.css">
+</head>
+<body>
+
+<div class="layout">
+
+  <aside class="sidebar">
+    <a href="teacher-dashboard.html" class="brand">
+      <span class="brand-icon">M</span>
+      <span>MindShelf.<small>TEACHER SPACE</small></span>
+    </a>
+
+    <p class="side-title">WORKSPACE</p>
+
+    <nav>
+      <a href="#overview" class="active">▦ Dashboard</a>
+      <a href="#classes">▤ My Classes</a>
+      <a href="#reviews">☷ Assignments & Reviews</a>
+      <a href="#resources">▧ Learning Resources</a>
+      <a href="#students">♧ Students</a>
+      <a href="#schedule">◷ Schedule</a>
+      <a href="#announcements">♢ Announcements</a>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <div class="side-card">
+        <span>✦</span>
+        <h4>Inspire minds.</h4>
+        <p>Every shared idea makes learning better.</p>
+      </div>
+      <a href="profile.html" class="profile-link">◉ My Profile</a>
+      <a href="login.html" class="logout">↪ Log Out</a>
+    </div>
+  </aside>
+
+  <main class="main">
+
+    <header class="topbar">
+      <div>
+        <span class="breadcrumb">WORKSPACE /</span>
+        <strong>Teacher Dashboard</strong>
+      </div>
+
+      <div class="top-actions">
+        <button class="notification" id="notificationBtn"
+          aria-label="View notifications">♢
+          <span></span>
+        </button>
+        <a href="profile.html" class="avatar">T</a>
+      </div>
+    </header>
+
+    <div class="content" id="overview">
+
+      <section class="welcome">
+        <div>
+          <span class="eyebrow">YOUR TEACHING SPACE</span>
+          <h1>Good day, <em>Teacher!</em></h1>
+          <p>Here's what's happening in your learning community today.</p>
+          <a href="#reviews" class="welcome-btn">Review Submissions ↗</a>
+        </div>
+        <div class="welcome-art">
+          <div class="art-circle"></div>
+          <div class="art-book">✎</div>
+          <span>✳</span>
+        </div>
+      </section>
+
+      <!-- Overview Cards -->
+      <section class="stats">
+        <div class="stat-card">
+          <span class="stat-icon">♧</span>
+          <p>Total Students</p>
+          <h2 id="totalStudents">128</h2>
+          <small>Across your classes</small>
+        </div>
+
+        <div class="stat-card">
+          <span class="stat-icon">▤</span>
+          <p>Active Classes</p>
+          <h2 id="totalClasses">4</h2>
+          <small>Currently running</small>
+        </div>
+
+        <div class="stat-card">
+          <span class="stat-icon">☷</span>
+          <p>Pending Reviews</p>
+          <h2 id="totalPending">12</h2>
+          <small>Need your attention</small>
+        </div>
+
+        <div class="stat-card">
+          <span class="stat-icon">▧</span>
+          <p>Shared Resources</p>
+          <h2 id="totalResources">36</h2>
+          <small>Learning materials</small>
+        </div>
+      </section>
+
+      <!-- Quick Actions -->
+      <section class="quick-actions">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">QUICK ACCESS</span>
+            <h2>What would you like to do?</h2>
+          </div>
+        </div>
+
+        <div class="action-grid">
+          <button data-action="Upload Resource" class="action-card">
+            <span>＋</span>
+            <strong>Upload Notes</strong>
+            <small>Share study materials</small>
+          </button>
+
+          <button data-action="Create Assignment" class="action-card">
+            <span>✎</span>
+            <strong>Create Assignment</strong>
+            <small>Give students a task</small>
+          </button>
+
+          <button data-action="Post Announcement" class="action-card">
+            <span>♢</span>
+            <strong>Announcement</strong>
+            <small>Share an update</small>
+          </button>
+
+          <button data-action="Add Class" class="action-card">
+            <span>＋</span>
+            <strong>Add Class</strong>
+            <small>Create a learning space</small>
+          </button>
+        </div>
+      </section>
+
+      <!-- Classes and Reviews -->
+      <div class="main-grid">
+
+        <section class="panel" id="classes">
+          <div class="panel-heading">
+            <div>
+              <span class="eyebrow">YOUR TEACHING</span>
+              <h2>My Classes</h2>
+            </div>
+            <span class="small-label">4 classes</span>
+          </div>
+
+          <div class="class-list">
+
+            <div class="class-item">
+              <div class="class-icon sage">DS</div>
+              <div class="class-info">
+                <h3>Advanced Data Science</h3>
+                <p>42 students · 12 resources</p>
+                <div class="progress">
+                  <div style="width:78%"></div>
+                </div>
+                <small>78% average progress</small>
+              </div>
+            </div>
+
+            <div class="class-item">
+              <div class="class-icon peach">ML</div>
+              <div class="class-info">
+                <h3>Machine Learning</h3>
+                <p>36 students · 9 resources</p>
+                <div class="progress">
+                  <div style="width:65%"></div>
+                </div>
+                <small>65% average progress</small>
+              </div>
+            </div>
+
+            <div class="class-item">
+              <div class="class-icon lilac">PY</div>
+              <div class="class-info">
+                <h3>Python Programming</h3>
+                <p>28 students · 8 resources</p>
+                <div class="progress">
+                  <div style="width:86%"></div>
+                </div>
+                <small>86% average progress</small>
+              </div>
+            </div>
+
+            <div class="class-item">
+              <div class="class-icon yellow">UI</div>
+              <div class="class-info">
+                <h3>UI/UX Fundamentals</h3>
+                <p>22 students · 7 resources</p>
+                <div class="progress">
+                  <div style="width:72%"></div>
+                </div>
+                <small>72% average progress</small>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <section class="panel" id="reviews">
+          <div class="panel-heading">
+            <div>
+              <span class="eyebrow">ACTION REQUIRED</span>
+              <h2>Pending Reviews</h2>
+            </div>
+            <span class="pending-badge" id="reviewBadge">12 pending</span>
+          </div>
+
+          <div class="review-list" id="reviewList"></div>
+
+          <p class="helper-text">Demo submissions · Select Reviewed to mark complete.</p>
+        </section>
+
+      </div>
+
+      <!-- Student performance and Schedule -->
+      <div class="main-grid second-grid">
+
+        <section class="panel" id="students">
+          <div class="panel-heading">
+            <div>
+              <span class="eyebrow">CLASS INSIGHTS</span>
+              <h2>Student Performance</h2>
+            </div>
+          </div>
+
+          <div class="performance-score">
+            <div>
+              <p>Overall average progress</p>
+              <h2>75.3%</h2>
+            </div>
+            <span class="performance-icon">↗</span>
+          </div>
+
+          <div class="performance-bars">
+            <div class="bar-item">
+              <div><span>Data Science</span><b>78%</b></div>
+              <div class="progress"><div style="width:78%"></div></div>
+            </div>
+
+            <div class="bar-item">
+              <div><span>Machine Learning</span><b>65%</b></div>
+              <div class="progress"><div style="width:65%"></div></div>
+            </div>
+
+            <div class="bar-item">
+              <div><span>Python</span><b>86%</b></div>
+              <div class="progress"><div style="width:86%"></div></div>
+            </div>
+
+            <div class="bar-item">
+              <div><span>UI/UX</span><b>72%</b></div>
+              <div class="progress"><div style="width:72%"></div></div>
+            </div>
+          </div>
+          <p class="helper-text">Illustrative class progress data.</p>
+        </section>
+
+        <section class="panel" id="schedule">
+          <div class="panel-heading">
+            <div>
+              <span class="eyebrow">PLAN AHEAD</span>
+              <h2>Upcoming Schedule</h2>
+            </div>
+          </div>
+
+          <div class="schedule-list">
+            <div class="schedule-item">
+              <div class="date-box">
+                <b>26</b><span>OCT</span>
+              </div>
+              <div>
+                <h3>Python Programming</h3>
+                <p>10:00 AM · Lab Session</p>
+              </div>
+            </div>
+
+            <div class="schedule-item">
+              <div class="date-box">
+                <b>27</b><span>OCT</span>
+              </div>
+              <div>
+                <h3>Advanced Data Science</h3>
+                <p>11:30 AM · Lecture</p>
+              </div>
+            </div>
+
+            <div class="schedule-item">
+              <div class="date-box">
+                <b>28</b><span>OCT</span>
+              </div>
+              <div>
+                <h3>Machine Learning</h3>
+                <p>02:00 PM · Tutorial</p>
+              </div>
+            </div>
+          </div>
+          <p class="helper-text">Sample schedule · Update with your timetable.</p>
+        </section>
+
+      </div>
+
+      <!-- Resources and Announcements -->
+      <div class="main-grid bottom-grid">
+
+        <section class="panel" id="resources">
+          <div class="panel-heading">
+            <div>
+              <span class="eyebrow">SHARE KNOWLEDGE</span>
+              <h2>Learning Resources</h2>
+            </div>
+          </div>
+
+          <div class="resource-highlight">
+            <div class="resource-icon">▧</div>
+            <div>
+              <h3>Resource Library</h3>
+              <p>Organize notes, PDFs, guides and reference materials.</p>
+            </div>
+          </div>
+
+          <button class="outline-btn" data-action="Upload Resource">
+            + Upload New Resource
+          </button>
+        </section>
+
+        <section class="panel" id="announcements">
+          <div class="panel-heading">
+            <div>
+              <span class="eyebrow">KEEP EVERYONE INFORMED</span>
+              <h2>Announcements</h2>
+            </div>
+          </div>
+
+          <div id="announcementList">
+            <div class="announcement-item">
+              <span class="announcement-dot"></span>
+              <div>
+                <h3>Welcome to the learning space!</h3>
+                <p>Sample announcement · Demo content</p>
+              </div>
+            </div>
+          </div>
+
+          <button class="outline-btn" data-action="Post Announcement">
+            + New Announcement
+          </button>
+        </section>
+
+      </div>
+
+      <!-- Activity -->
+      <section class="panel activity-panel">
+        <div class="panel-heading">
+          <div>
+            <span class="eyebrow">YOUR COMMUNITY</span>
+            <h2>Recent Activity</h2>
+          </div>
+        </div>
+
+        <div class="activity-list" id="activityList">
+          <div class="activity-item">
+            <span class="activity-dot"></span>
+            <div>
+              <p><b>Riya Mehta</b> submitted a Python assignment.</p>
+              <small>Sample activity · Today</small>
+            </div>
+          </div>
+          <div class="activity-item">
+            <span class="activity-dot"></span>
+            <div>
+              <p><b>Arjun Verma</b> joined Advanced Data Science.</p>
+              <small>Sample activity · Today</small>
+            </div>
+          </div>
+          <div class="activity-item">
+            <span class="activity-dot"></span>
+            <div>
+              <p><b>Priya Shah</b> shared study notes.</p>
+              <small>Sample activity · Yesterday</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <span>© 2026 MindShelf</span>
+        <span>Teach · Inspire · Grow</span>
+      </footer>
+
+    </div>
+  </main>
+</div>
+
+<!-- Quick Action Modal -->
+<div class="modal" id="actionModal" hidden>
+  <div class="modal-overlay" id="modalOverlay"></div>
+
+  <div class="modal-box" role="dialog" aria-modal="true"
+    aria-labelledby="modalTitle">
+    <button class="modal-close" id="closeModal">×</button>
+    <span class="eyebrow">TEACHER WORKSPACE</span>
+    <h2 id="modalTitle">Quick Action</h2>
+    <p id="modalDescription"></p>
+
+    <form id="actionForm">
+      <label for="actionName" id="actionLabel">Title</label>
+      <input type="text" id="actionName" required
+        placeholder="Enter a title">
+
+      <label for="actionDetails">Details</label>
+      <textarea id="actionDetails" rows="4"
+        placeholder="Add a short description"></textarea>
+
+      <div class="modal-buttons">
+        <button type="button" class="cancel-btn" id="cancelModal">
+          Cancel
+        </button>
+        <button type="submit" class="submit-btn">Save</button>
+      </div>
+    </form>
+    <p class="helper-text">Demo only · Data is saved in this browser.</p>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div id="footer"></div>
+
+<script src="teacher-dashboard.js"></script>
+<script src="footer.js"></script>
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account Settings | MindShelf</title>
+  <link rel="stylesheet" href="account-settings.css">
+  <link rel="stylesheet" href="footer.css">
+</head>
+<body>
+
+<div class="app">
+
+  <aside class="sidebar">
+    <a href="student-dashboard.html" class="brand">
+      <span class="brand-icon">M</span>
+      <span>MindShelf.<small>YOUR KNOWLEDGE SPACE</small></span>
+    </a>
+
+    <p class="side-label">WORKSPACE</p>
+
+    <nav>
+      <a href="student-dashboard.html">▦ Dashboard</a>
+      <a href="my-notes.html">▤ My Notes</a>
+      <a href="my-collections.html">▣ My Collections</a>
+      <a href="shared-resources.html">▧ Resource Library</a>
+      <a href="favorites.html">☆ Favorites</a>
+      <a href="shared-knowledge.html">♧ Shared Knowledge</a>
+      <a href="submissions.html">☷ Submissions</a>
+      <a href="notifications.html">♢ Notifications</a>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <div class="mini-card">
+        <strong>Your knowledge matters.</strong>
+        <p>Keep learning. Keep collecting ideas.</p>
+      </div>
+
+      <a href="profile.html" class="student">◉ My Profile</a>
+    </div>
+  </aside>
+
+  <main class="main">
+
+    <header class="topbar">
+      <a href="profile.html" class="back">← My Profile</a>
+      <a href="notifications.html" class="notification"
+         aria-label="Notifications">♢</a>
+    </header>
+
+    <section class="content">
+
+      <div class="heading">
+        <p class="eyebrow">ACCOUNT</p>
+        <h1>Account Settings</h1>
+        <p class="subtitle">
+          Customize your MindShelf experience.
+        </p>
+      </div>
+
+      <div class="settings-layout">
+
+        <div class="settings-menu">
+          <a href="#general" class="menu-link active">⚙ General</a>
+          <a href="#notifications" class="menu-link">♢ Notifications</a>
+          <a href="#privacy" class="menu-link">◈ Privacy</a>
+          <a href="#account" class="menu-link">◉ Account</a>
+        </div>
+
+        <div class="settings-content">
+
+          <section class="settings-card" id="general">
+            <div class="card-heading">
+              <h2>General Preferences</h2>
+              <p>Manage your basic application preferences.</p>
+            </div>
+
+            <div class="setting-row">
+              <div>
+                <h3>Appearance</h3>
+                <p>Choose how MindShelf looks on your device.</p>
+              </div>
+
+              <select id="appearance">
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+              </select>
+            </div>
+
+            <div class="setting-row">
+              <div>
+                <h3>Language</h3>
+                <p>Choose your preferred language.</p>
+              </div>
+
+              <select id="language">
+                <option value="English">English</option>
+                <option value="Hindi">Hindi</option>
+              </select>
+            </div>
+
+            <div class="setting-row">
+              <div>
+                <h3>Compact Layout</h3>
+                <p>Reduce spacing between settings and content.</p>
+              </div>
+
+              <label class="switch">
+                <input type="checkbox" id="compact">
+                <span class="switch-slider"></span>
+              </label>
+            </div>
+          </section>
+
+          <section class="settings-card" id="notifications">
+            <div class="card-heading">
+              <h2>Notification Preferences</h2>
+              <p>Choose the updates you want to receive.</p>
+            </div>
+
+            <div class="setting-row">
+              <div>
+                <h3>Assignment Updates</h3>
+                <p>Updates about assignments and submissions.</p>
+              </div>
+
+              <label class="switch">
+                <input type="checkbox" id="assignmentNotifications">
+                <span class="switch-slider"></span>
+              </label>
+            </div>
+
+            <div class="setting-row">
+              <div>
+                <h3>Community Activity</h3>
+                <p>Updates about discussions and shared knowledge.</p>
+              </div>
+
+              <label class="switch">
+                <input type="checkbox" id="communityNotifications">
+                <span class="switch-slider"></span>
+              </label>
+            </div>
+
+            <div class="setting-row">
+              <div>
+                <h3>Resource Updates</h3>
+                <p>Updates about learning resources.</p>
+              </div>
+
+              <label class="switch">
+                <input type="checkbox" id="resourceNotifications">
+                <span class="switch-slider"></span>
+              </label>
+            </div>
+
+            <div class="setting-row">
+              <div>
+                <h3>System Notifications</h3>
+                <p>Important platform announcements.</p>
+              </div>
+
+              <label class="switch">
+                <input type="checkbox" id="systemNotifications">
+                <span class="switch-slider"></span>
+              </label>
+            </div>
+          </section>
+
+          <section class="settings-card" id="privacy">
+            <div class="card-heading">
+              <h2>Privacy</h2>
+              <p>Manage your profile visibility preferences.</p>
+            </div>
+
+            <div class="setting-row">
+              <div>
+                <h3>Profile Visibility</h3>
+                <p>Choose whether your profile is public or private.</p>
+              </div>
+
+              <select id="profileVisibility">
+                <option value="private">Private</option>
+                <option value="public">Public</option>
+              </select>
+            </div>
+
+            <div class="privacy-note">
+              <strong>Privacy information</strong>
+              <p>
+                These are demo preferences only. Real profile visibility
+                must be enforced by your backend.
+              </p>
+            </div>
+          </section>
+
+          <section class="settings-card" id="account">
+            <div class="card-heading">
+              <h2>Account</h2>
+              <p>View your account and account-related options.</p>
+            </div>
+
+            <div class="setting-row">
+              <div>
+                <h3>My Profile</h3>
+                <p>Update your personal and academic information.</p>
+              </div>
+
+              <a href="profile.html" class="small-button">View Profile</a>
+            </div>
+
+            <div class="setting-row">
+              <div>
+                <h3>Help & Support</h3>
+                <p>Find answers or prepare a support request.</p>
+              </div>
+
+              <a href="help.html" class="small-button">Get Help</a>
+            </div>
+
+            <div class="setting-row danger-row">
+              <div>
+                <h3>Reset Preferences</h3>
+                <p>Restore the default settings on this device.</p>
+              </div>
+
+              <button type="button" id="resetButton" class="reset-button">
+                Reset
+              </button>
+            </div>
+          </section>
+
+          <div class="save-area">
+            <p id="saveMessage" role="status"></p>
+            <button type="button" id="saveButton" class="save-button">
+              Save Changes
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+  </main>
+  
+</div>
+
+<div id="footer"></div>
+<script src="account-settings.js"></script>
+<script src="footer.js"></script>
+</body>
+</html>

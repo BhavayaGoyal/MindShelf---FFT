@@ -1,0 +1,198 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f8f8f3;
+  color: #233e35;
+}
+
+.page {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 30px;
+}
+
+.topbar {
+  height: 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e7e9e0;
+}
+
+.brand {
+  text-decoration: none;
+  font-size: 23px;
+  font-weight: bold;
+  color: #214c3d;
+}
+
+.profile {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  color: white;
+  background: #214c3d;
+}
+
+main {
+  padding: 35px 0;
+}
+
+.back {
+  color: #6d8171;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.back:hover {
+  color: #214c3d;
+}
+
+.heading {
+  margin: 35px 0;
+}
+
+.tag {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #7c9278;
+  font-weight: bold;
+}
+
+.heading h1 {
+  font-size: 38px;
+  margin-top: 12px;
+  letter-spacing: -1px;
+}
+
+.heading h1 em {
+  font-family: Georgia, serif;
+  font-weight: normal;
+  color: #648464;
+}
+
+.heading p {
+  color: #829087;
+  font-size: 13px;
+  margin-top: 12px;
+  line-height: 1.7;
+}
+
+.archive-box {
+  background: #fffefa;
+  border: 1px solid #e7e9e0;
+  border-radius: 16px;
+  padding: 25px;
+}
+
+.box-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.box-heading h2 {
+  font-size: 19px;
+}
+
+.box-heading p {
+  color: #829087;
+  font-size: 12px;
+  margin-top: 7px;
+}
+
+#count {
+  background: #eaf0e7;
+  color: #45664c;
+  border-radius: 20px;
+  padding: 8px 12px;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.archive-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 18px 0;
+  border-top: 1px solid #edf0e8;
+}
+
+.note-info {
+  min-width: 0;
+}
+
+.note-info h3 {
+  font-size: 14px;
+  margin-bottom: 7px;
+}
+
+.note-info p {
+  font-size: 11px;
+  color: #829087;
+  line-height: 1.6;
+}
+
+.restore {
+  flex-shrink: 0;
+  padding: 9px 13px;
+  border: 1px solid #dce5d8;
+  background: #f3f6ef;
+  color: #45664c;
+  border-radius: 8px;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.restore:hover {
+  background: #214c3d;
+  color: white;
+}
+
+.empty {
+  text-align: center;
+  padding: 25px 0;
+  color: #829087;
+  font-size: 13px;
+}
+
+footer {
+  border-top: 1px solid #e7e9e0;
+  padding: 20px 0;
+  font-size: 11px;
+  color: #98a198;
+}
+
+@media (max-width: 550px) {
+  .page {
+    padding: 0 17px;
+  }
+
+  .heading h1 {
+    font-size: 31px;
+  }
+
+  .archive-box {
+    padding: 18px;
+  }
+
+  .archive-item {
+    align-items: flex-start;
+  }
+
+  .restore {
+    padding: 8px 10px;
+  }
+}

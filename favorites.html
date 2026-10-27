@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Favorites | MindShelf</title>
+  <link rel="stylesheet" href="favorites.css">
+  <link rel="stylesheet" href="footer.css">
+</head>
+<body>
+
+<div class="app">
+
+  <aside class="sidebar">
+    <a href="student-dashboard.html" class="brand">
+      <span class="brand-icon">M</span>
+      <span>MindShelf.<small>YOUR KNOWLEDGE SPACE</small></span>
+    </a>
+
+    <p class="side-label">WORKSPACE</p>
+
+    <nav>
+      <a href="student-dashboard.html">⌂ Dashboard</a>
+      <a href="my-notes.html">▤ My Notes</a>
+      <a href="my-collections.html">▣ Collections</a>
+      <a href="shared-resources.html">▧ Resource Library</a>
+      <a href="favorites.html" class="active">☆ Favorites</a>
+      <a href="shared-knowledge.html">♧ Shared Knowledge</a>
+      <a href="submissions.html">☷ Submissions</a>
+      <a href="notifications.html">♢ Notifications</a>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <div class="mini-card">
+        <strong>Your knowledge matters.</strong>
+        <p>Keep learning. Keep collecting ideas.</p>
+      </div>
+      <a href="profile.html" class="student">◉ Student Account</a>
+    </div>
+  </aside>
+
+  <main class="main">
+
+    <header class="topbar">
+      <a href="student-dashboard.html" class="back">← Dashboard</a>
+      <a href="notifications.html" class="notification">♢</a>
+    </header>
+
+    <section class="content">
+
+      <div class="page-heading">
+        <div>
+          <p class="eyebrow">YOUR PERSONAL SPACE</p>
+          <h1>My Favorites <span id="favoriteCount">0</span></h1>
+          <p class="subtitle">
+            Your most useful notes and resources, all in one place.
+          </p>
+        </div>
+      </div>
+
+      <div class="toolbar">
+        <input type="search" id="searchInput"
+          placeholder="Search favorites..." aria-label="Search favorites">
+
+        <select id="subjectFilter" aria-label="Filter by subject">
+          <option value="all">All subjects</option>
+        </select>
+
+        <div class="view-buttons">
+          <button id="gridBtn" class="selected" aria-label="Grid view">▦</button>
+          <button id="listBtn" aria-label="List view">☷</button>
+        </div>
+      </div>
+
+      <div class="tabs">
+        <button class="tab active" data-type="all">All Favorites</button>
+        <button class="tab" data-type="note">Notes</button>
+        <button class="tab" data-type="resource">Resources</button>
+      </div>
+
+      <div id="favoriteList" class="favorite-grid"></div>
+
+      <div id="emptyState" class="empty-state" hidden>
+        <div class="empty-icon">☆</div>
+        <h2 id="emptyTitle">No favorites yet</h2>
+        <p id="emptyMessage">
+          Add your favorite notes and resources to find them here.
+        </p>
+        <a href="my-notes.html" class="primary-button">Explore My Notes</a>
+      </div>
+
+      <footer>
+        <span>© 2026 MindShelf</span>
+        <span>Learn · Share · Grow</span>
+      </footer>
+
+    </section>
+  </main>
+</div>
+<div id="footer"></div>
+<script src="favorites.js"></script>
+<script src="footer.js"></script>
+</body>
+</html>

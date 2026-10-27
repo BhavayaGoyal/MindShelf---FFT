@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Archive | MindShelf</title>
+  <link rel="stylesheet" href="archive.css">
+  <link rel="stylesheet" href="footer.css">
+</head>
+<body>
+
+<div class="page">
+  <header class="topbar">
+    <a href="student-dashboard.html" class="brand">Mindshelf.</a>
+    <a href="profile.html" class="profile">B</a>
+  </header>
+
+  <main>
+    <a href="my-notes.html" class="back">← Back to My Notes</a>
+
+    <section class="heading">
+      <span class="tag">YOUR WORKSPACE</span>
+      <h1>Note <em>Archive.</em></h1>
+      <p>Old notes, saved memories. Keep your workspace tidy.</p>
+    </section>
+
+    <section class="archive-box">
+      <div class="box-heading">
+        <div>
+          <h2>Archived Notes</h2>
+          <p>Your notes, kept safely in one place.</p>
+        </div>
+        <span id="count">3 notes</span>
+      </div>
+
+      <div id="archiveList"></div>
+
+      <p class="empty" id="empty" hidden>
+        Your archive is empty.
+      </p>
+    </section>
+  </main>
+</div>
+<div id="footer"></div>
+
+<script src="archive.js"></script>
+<script src="footer.js"></script>
+</body>
+</html>

@@ -1,0 +1,243 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submissions | MindShelf</title>
+    <link rel="stylesheet" href="submissions.css">
+    <link rel="stylesheet" href="footer.css">
+</head>
+<body>
+
+<div class="app">
+
+    <aside class="sidebar" id="sidebar">
+        <a href="student-dashboard.html" class="brand">
+            <span class="brand-icon">M</span>
+            <span>MindShelf</span>
+        </a>
+
+        <p class="menu-title">WORKSPACE</p>
+
+        <nav class="nav-menu">
+            <a href="student-dashboard.html" class="nav-link">▦ Dashboard</a>
+            <a href="my-notes.html" class="nav-link">▤ My Notes</a>
+            <a href="my-collections.html" class="nav-link">▣ My Collections</a>
+            <a href="shared-resources.html" class="nav-link">▧ Resource Library</a>
+            <a href="shared-knowledge.html" class="nav-link">♧ Shared Knowledge</a>
+        </nav>
+
+        <p class="menu-title">ACADEMIC</p>
+
+        <nav class="nav-menu">
+            <a href="submissions.html" class="nav-link active">☷ Submissions</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="profile">
+                <div class="avatar">B</div>
+                <div>
+                    <strong>Bhavaya</strong>
+                    <small>Student</small>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main">
+
+        <header class="topbar">
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+            <div class="breadcrumb">Workspace <span>/</span> Submissions</div>
+            <div class="top-actions">
+                <input type="search" id="searchInput" placeholder="Search assignments...">
+                <div class="top-avatar">B</div>
+            </div>
+        </header>
+
+        <section class="content">
+
+            <div class="welcome">
+                <div>
+                    <p class="eyebrow">ACADEMIC WORKSPACE</p>
+                    <h1>Submission Center<span>.</span></h1>
+                    <p class="subtitle">
+                        Keep your assignments organized.
+                        Stay ahead of every deadline.
+                    </p>
+                </div>
+
+                <button class="outline-btn" id="calendarBtn">▦ Upcoming deadlines</button>
+            </div>
+
+            <section class="deadline-banner">
+                <div>
+                    <span class="banner-label">STAY ON TRACK</span>
+                    <h2>Your progress, one task at a time.</h2>
+                    <p>Review your work, submit on time and celebrate your progress.</p>
+                </div>
+                <div class="banner-icon">✎</div>
+            </section>
+
+            <section class="stats">
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span class="stat-icon green">☷</span>
+                        <span class="stat-label">TOTAL TASKS</span>
+                    </div>
+                    <h2 id="totalCount">0</h2>
+                    <p>All assignments</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span class="stat-icon gold">◷</span>
+                        <span class="stat-label">PENDING</span>
+                    </div>
+                    <h2 id="pendingCount">0</h2>
+                    <p>Awaiting submission</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span class="stat-icon purple">✓</span>
+                        <span class="stat-label">SUBMITTED</span>
+                    </div>
+                    <h2 id="submittedCount">0</h2>
+                    <p>Sent for review</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span class="stat-icon blue">✧</span>
+                        <span class="stat-label">REVIEWED</span>
+                    </div>
+                    <h2 id="reviewedCount">0</h2>
+                    <p>Feedback received</p>
+                </div>
+            </section>
+
+            <section class="progress-section">
+                <div class="progress-heading">
+                    <div>
+                        <h3>Submission progress</h3>
+                        <p>Keep moving forward with your academic goals.</p>
+                    </div>
+                    <strong id="progressText">0%</strong>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </section>
+
+            <section class="assignment-section" id="assignmentSection">
+
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">YOUR ACADEMIC TASKS</p>
+                        <h2>Assignments & projects</h2>
+                    </div>
+                    <span id="assignmentCount">0 tasks</span>
+                </div>
+
+                <div class="toolbar">
+                    <div class="tabs">
+                        <button class="tab active" data-filter="all">All tasks</button>
+                        <button class="tab" data-filter="pending">Pending</button>
+                        <button class="tab" data-filter="submitted">Submitted</button>
+                        <button class="tab" data-filter="reviewed">Reviewed</button>
+                    </div>
+
+                    <select id="sortSelect" aria-label="Sort assignments">
+                        <option value="deadline">Nearest deadline</option>
+                        <option value="newest">Recently added</option>
+                        <option value="name">Name A–Z</option>
+                    </select>
+                </div>
+
+                <div class="assignment-list" id="assignmentList"></div>
+
+                <div class="empty-state" id="emptyState" hidden>
+                    <div>✧</div>
+                    <h3>No assignments found</h3>
+                    <p>Try changing your search or filter.</p>
+                    <button class="outline-btn" id="resetBtn">Show all tasks</button>
+                </div>
+            </section>
+
+            <section class="feedback-section">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">LEARNING CHECK-IN</p>
+                        <h2>Recent feedback</h2>
+                    </div>
+                </div>
+
+                <div class="feedback-list" id="feedbackList"></div>
+            </section>
+
+        </section>
+    </main>
+</div>
+
+<!-- Submission Modal -->
+<div class="modal-overlay" id="submitModal" hidden>
+    <div class="modal">
+        <div class="modal-header">
+            <div>
+                <p class="eyebrow">ASSIGNMENT SUBMISSION</p>
+                <h2>Submit your work</h2>
+            </div>
+            <button class="close-btn" id="closeModal" aria-label="Close">×</button>
+        </div>
+
+        <div class="assignment-summary">
+            <span class="summary-label">ASSIGNMENT</span>
+            <h3 id="modalTaskTitle"></h3>
+            <p id="modalTaskSubject"></p>
+            <p id="modalTaskDeadline"></p>
+        </div>
+
+        <form id="submissionForm">
+            <label for="submissionType">Submission method</label>
+            <select id="submissionType">
+                <option value="link">Project / Drive link</option>
+                <option value="file">Upload a file</option>
+            </select>
+
+            <div id="linkField">
+                <label for="submissionLink">Work link</label>
+                <input type="url" id="submissionLink"
+                       placeholder="https://..." >
+                <small>Use a link your teacher can access.</small>
+            </div>
+
+            <div id="fileField" hidden>
+                <label for="submissionFile">Choose your file</label>
+                <input type="file" id="submissionFile"
+                       accept=".pdf,.doc,.docx,.ppt,.pptx,.zip">
+                <small>Demo upload: the file is not sent to a server.</small>
+            </div>
+
+            <label for="submissionNote">Note (optional)</label>
+            <textarea id="submissionNote" rows="3" maxlength="500"
+                      placeholder="Add a message for your teacher..."></textarea>
+
+            <p class="form-error" id="formError"></p>
+
+            <div class="modal-actions">
+                <button type="button" class="secondary-btn" id="cancelModal">Cancel</button>
+                <button type="submit" class="primary-btn">Submit work ↗</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div id="footer"></div>
+
+<script src="submissions.js"></script>
+<script src="footer.js"></script>
+</body>
+</html>

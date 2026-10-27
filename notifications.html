@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications | MindShelf</title>
+    <link rel="stylesheet" href="notifications.css">
+    <link rel="stylesheet" href="footer.css">
+</head>
+<body>
+
+<div class="app">
+
+    <aside class="sidebar" id="sidebar">
+        <a href="student-dashboard.html" class="brand">
+            <span class="brand-icon">M</span>
+            MindShelf
+        </a>
+
+        <p class="menu-title">WORKSPACE</p>
+        <nav class="nav-menu">
+            <a href="student-dashboard.html" class="nav-link">▦ Dashboard</a>
+            <a href="my-notes.html" class="nav-link">▤ My Notes</a>
+            <a href="my-collections.html" class="nav-link">▣ My Collections</a>
+            <a href="shared-resources.html" class="nav-link">▧ Resource Library</a>
+            <a href="shared-knowledge.html" class="nav-link">♧ Shared Knowledge</a>
+        </nav>
+
+        <p class="menu-title">ACADEMIC</p>
+        <nav class="nav-menu">
+            <a href="submissions.html" class="nav-link">☷ Submissions</a>
+            <a href="notifications.html" class="nav-link active">♢ Notifications</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="profile">
+                <div class="avatar">B</div>
+                <div>
+                    <strong>Bhavaya</strong>
+                    <small>Student</small>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main">
+        <header class="topbar">
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+            <div class="breadcrumb">Workspace <span>/</span> Notifications</div>
+            <div class="top-actions">
+                <div class="top-avatar">B</div>
+            </div>
+        </header>
+
+        <section class="content">
+
+            <div class="page-heading">
+                <div>
+                    <p class="eyebrow">YOUR UPDATES</p>
+                    <h1>Notifications<span>.</span></h1>
+                    <p class="subtitle">Stay connected with everything happening on MindShelf.</p>
+                </div>
+                <button class="primary-btn" id="markAllBtn">✓ Mark all as read</button>
+            </div>
+
+            <div class="notification-summary">
+                <div>
+                    <span class="summary-label">UNREAD NOTIFICATIONS</span>
+                    <h2 id="unreadCount">0</h2>
+                    <p>Updates waiting for you</p>
+                </div>
+                <div class="summary-icon">♢</div>
+            </div>
+
+            <section class="notification-panel">
+
+                <div class="panel-heading">
+                    <div>
+                        <h2>Your activity</h2>
+                        <p>Messages, reminders and community updates.</p>
+                    </div>
+                    <button class="text-btn" id="preferencesBtn">⚙ Preferences</button>
+                </div>
+
+                <div class="notification-tools">
+                    <div class="filter-tabs">
+                        <button class="tab active" data-filter="all">All</button>
+                        <button class="tab" data-filter="unread">Unread</button>
+                        <button class="tab" data-filter="read">Read</button>
+                    </div>
+
+                    <input type="search" id="searchInput" placeholder="Search notifications...">
+                </div>
+
+                <div class="category-row">
+                    <button class="category active" data-category="all">All activity</button>
+                    <button class="category" data-category="assignment">Assignments</button>
+                    <button class="category" data-category="community">Community</button>
+                    <button class="category" data-category="resource">Resources</button>
+                    <button class="category" data-category="system">System</button>
+                </div>
+
+                <div class="list-heading">
+                    <h3>Recent notifications</h3>
+                    <span id="resultCount">0 notifications</span>
+                </div>
+
+                <div id="notificationList" class="notification-list"></div>
+
+                <div class="empty-state" id="emptyState" hidden>
+                    <div>♢</div>
+                    <h3>All caught up?</h3>
+                    <p>No notifications found. Try another filter.</p>
+                    <button class="outline-btn" id="resetBtn">Show all notifications</button>
+                </div>
+            </section>
+
+            <section class="bottom-tip">
+                <div class="tip-icon">✦</div>
+                <div>
+                    <h3>A little reminder</h3>
+                    <p>Check your assignment deadlines and community replies regularly so you never miss an important update.</p>
+                </div>
+            </section>
+
+        </section>
+    </main>
+</div>
+
+<!-- Preferences Modal -->
+<div class="modal-overlay" id="preferencesModal" hidden>
+    <div class="modal">
+        <div class="modal-heading">
+            <div>
+                <p class="eyebrow">PERSONALIZE YOUR EXPERIENCE</p>
+                <h2>Notification preferences</h2>
+            </div>
+            <button class="close-btn" id="closePreferences" aria-label="Close">×</button>
+        </div>
+
+        <p class="modal-subtitle">Choose which notifications you want to see in this demo.</p>
+
+        <div class="preference-row">
+            <div>
+                <strong>Assignment reminders</strong>
+                <p>Deadlines and submission updates</p>
+            </div>
+            <input type="checkbox" id="prefAssignment">
+        </div>
+
+        <div class="preference-row">
+            <div>
+                <strong>Community updates</strong>
+                <p>Replies and knowledge discussions</p>
+            </div>
+            <input type="checkbox" id="prefCommunity">
+        </div>
+
+        <div class="preference-row">
+            <div>
+                <strong>Resource updates</strong>
+                <p>Shared study materials</p>
+            </div>
+            <input type="checkbox" id="prefResource">
+        </div>
+
+        <div class="preference-row">
+            <div>
+                <strong>System notifications</strong>
+                <p>General platform announcements</p>
+            </div>
+            <input type="checkbox" id="prefSystem">
+        </div>
+
+        <div class="modal-actions">
+            <button class="secondary-btn" id="cancelPreferences">Cancel</button>
+            <button class="primary-btn" id="savePreferences">Save preferences</button>
+        </div>
+    </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div id="footer"></div>
+
+<script src="notifications.js"></script>
+<script src="footer.js"></script>
+</body>
+</html>
